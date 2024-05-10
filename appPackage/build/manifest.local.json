@@ -1,0 +1,84 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.15/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.15",
+    "version": "1.0.0",
+    "id": "f7bc8c20-f1fd-4af6-bfbf-e5f13c91127d",
+    "packageName": "com.microsoft.teams.extension",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://localhost:53000",
+        "privacyUrl": "https://localhost:53000/index.html#/privacy",
+        "termsOfUseUrl": "https://localhost:53000/index.html#/termsofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Workwaylocal",
+        "full": "Full name for Workway"
+    },
+    "description": {
+        "short": "Short description of Workway",
+        "full": "Full description of Workway"
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [
+        {
+            "botId": "ec1463c1-511f-4d79-9d60-28643c8bb963",
+            "commands": [
+                {
+                    "id": "searchQuery",
+                    "context": [
+                        "compose",
+                        "commandBox"
+                    ],
+                    "description": "Test command to run query",
+                    "title": "Search",
+                    "type": "query",
+                    "parameters": [
+                        {
+                            "name": "searchQuery",
+                            "title": "Search Query",
+                            "description": "Your search query",
+                            "inputType": "text"
+                        }
+                    ]
+                }
+            ],
+            "messageHandlers": [
+                {
+                    "type": "link",
+                    "value": {
+                        "domains": [
+                            "*.mindvalley.com"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "staticTabs": [
+        {
+            "entityId": "index",
+            "name": "Personal Tab",
+            "contentUrl": "https://localhost:53000/index.html#/tab",
+            "websiteUrl": "https://localhost:53000/index.html#/tab",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "localhost:53000",
+        "*.mindvalley.com"
+    ],
+    "webApplicationInfo": {
+        "id": "3fcbc7fc-b106-4a35-a77b-28ec3633285b",
+        "resource": "api://localhost:53000/3fcbc7fc-b106-4a35-a77b-28ec3633285b"
+    }
+}
